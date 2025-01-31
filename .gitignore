@@ -1,0 +1,8 @@
+node_modules/
+.DS_Store
+*.log
+.env
+.phpunit.cache/
+vendor/
+wp-config.php
+wp-config-local.php

@@ -1,0 +1,166 @@
+:root {
+    /* Dashboard Core Theme Colors */
+    --primary-color: #ddff0e;
+    --primary-hover: #c7e60d;
+    --background-dark: #1a1a1a;
+    --background-darker: #141414;
+    --text-light: #ffffff;
+    --text-dim: #a0a0a0;
+    --border-color: #333333;
+    --input-background: #242424;
+    --error-color: #ff4444;
+    --success-color: #00cc88;
+    --error-background: rgba(255, 68, 68, 0.1);
+    --error-border: rgba(255, 68, 68, 0.3);
+    --error-text: #ff4444;
+
+    /* Typography */
+    --font-size-xs: 0.75rem;   /* 12px */
+    --font-size-sm: 0.875rem;  /* 14px */
+    --font-size-base: 1rem;    /* 16px */
+    --font-size-lg: 1.125rem;  /* 18px */
+    --font-size-xl: 1.25rem;   /* 20px */
+    --font-size-2xl: 1.5rem;   /* 24px */
+    --font-size-3xl: 1.875rem; /* 30px */
+    --font-size-4xl: 2.25rem;  /* 36px */
+
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 600;
+
+    /* Spacing */
+    --spacing-xs: 0.25rem;  /* 4px */
+    --spacing-sm: 0.5rem;   /* 8px */
+    --spacing-md: 1rem;     /* 16px */
+    --spacing-lg: 1.5rem;   /* 24px */
+    --spacing-xl: 2rem;     /* 32px */
+    --spacing-2xl: 3rem;    /* 48px */
+
+    /* Layout */
+    --container-width: 1200px;
+    --sidebar-width: 250px;
+    --header-height: 60px;
+
+    /* Borders */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+    --border-width: 1px;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+    /* Transitions */
+    --transition-fast: 150ms ease;
+    --transition-normal: 250ms ease;
+    --transition-slow: 350ms ease;
+
+    /* Z-indices */
+    --z-index-dropdown: 1000;
+    --z-index-sticky: 1020;
+    --z-index-fixed: 1030;
+    --z-index-modal: 1040;
+    --z-index-popover: 1050;
+    --z-index-tooltip: 1060;
+}
+
+/* Base button styles */
+
+.btn {
+    display: inline-block;
+    font-size: 1rem;
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    font-weight: var(--font-weight-medium);
+    padding: 0.5rem 1.5rem;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border: none;
+    border-radius: 4px;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: all 150ms ease;
+    transition: all var(--transition-fast);
+    text-align: center;
+}
+
+/* Primary variant */
+
+.btn--primary {
+    background: #ddff0e;
+    background: var(--primary-color);
+    color: #ffffff;
+    color: var(--text-light);
+}
+
+.btn--primary:hover:not(:disabled) {
+    background: #c7e60d;
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
+.btn--primary:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #ddff0e;
+    box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+/* Secondary variant */
+
+.btn--secondary {
+    background: #141414;
+    background: var(--background-darker);
+    color: #ffffff;
+    color: var(--text-light);
+    border: 1px solid #333333;
+    border: 1px solid var(--border-color);
+}
+
+.btn--secondary:hover:not(:disabled) {
+    background: var(--background-light);
+    border-color: #a0a0a0;
+    border-color: var(--text-dim);
+}
+
+/* Disabled state for all variants */
+
+.btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Physical feature specific */
+
+.btn--feature-physical {
+    background: #e2ff32;
+    color: #141414;
+    color: var(--background-darker);
+    font-weight: 600;
+    font-weight: var(--font-weight-bold);
+}
+
+.btn--feature-physical:hover:not(:disabled) {
+    background: #242424;
+    background: var(--input-background);
+    color: #a0a0a0;
+    color: var(--text-dim);
+    opacity: 1;
+}
+
+.btn--feature-physical:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #e2ff32;
+}
+
+/* Responsive adjustments */
+
+@media (max-width: 768px) {
+    .btn {
+        width: 100%;
+        padding: 1.5rem 2rem;
+        padding: var(--spacing-lg) var(--spacing-xl);
+    }
+} 

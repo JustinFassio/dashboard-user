@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "module": "esnext",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "downlevelIteration": true,
+    "baseUrl": ".",
+    "paths": {
+      "@dashboard/*": ["dashboard/*"],
+      "@features/*": ["features/*"],
+      "@assets/*": ["assets/src/*"],
+      "@test/*": ["__tests__/*"]
+    },
+    "typeRoots": [
+      "./node_modules/@types",
+      "./dashboard/types"
+    ],
+    "types": ["jest", "@testing-library/jest-dom", "node"]
+  },
+  "include": [
+    "assets/src/**/*",
+    "dashboard/**/*",
+    "features/**/*",
+    "**/__tests__/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "build"
+  ]
+} 

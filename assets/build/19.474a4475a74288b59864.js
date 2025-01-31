@@ -1,0 +1,63 @@
+"use strict";(globalThis.webpackChunkathlete_dashboard_child=globalThis.webpackChunkathlete_dashboard_child||[]).push([[19],{403:(e,r,s)=>{s.d(r,{$:()=>n});var t=s(848);s(609);const n=({children:e,variant:r="primary",feature:s,className:n="",...i})=>{const a=["btn",`btn--${r}`,s&&`btn--feature-${s}`,n].filter(Boolean).join(" ");return(0,t.jsx)("button",{className:a,...i,children:e})}},19:(e,r,s)=>{s.d(r,{WorkoutGeneratorFeature:()=>A});var t,n=s(848),i=s(609),a=s(57);!function(e){e.FETCH_REQUEST="WORKOUT_FETCH_REQUEST",e.FETCH_SUCCESS="WORKOUT_FETCH_SUCCESS",e.FETCH_ERROR="WORKOUT_FETCH_ERROR",e.GENERATE_REQUEST="WORKOUT_GENERATE_REQUEST",e.GENERATE_SUCCESS="WORKOUT_GENERATE_SUCCESS",e.GENERATE_ERROR="WORKOUT_GENERATE_ERROR",e.UPDATE_REQUEST="WORKOUT_UPDATE_REQUEST",e.UPDATE_SUCCESS="WORKOUT_UPDATE_SUCCESS",e.UPDATE_ERROR="WORKOUT_UPDATE_ERROR"}(t||(t={}));const o={isLoading:!1,error:null,preferences:null,settings:null,currentWorkout:null,workoutHistory:[]},c=(0,i.createContext)(void 0);function l(e,r){switch(r.type){case t.FETCH_REQUEST:return{...e,isLoading:!0,error:null};case t.FETCH_SUCCESS:return{...e,isLoading:!1,workoutHistory:r.payload};case t.FETCH_ERROR:return{...e,isLoading:!1,error:{name:"WorkoutError",message:r.payload,code:"WORKOUT_FETCH_ERROR",timestamp:Date.now()}};case t.GENERATE_REQUEST:return{...e,isLoading:!0,error:null};case t.GENERATE_SUCCESS:return{...e,isLoading:!1,currentWorkout:r.payload,workoutHistory:[...e.workoutHistory,r.payload]};case t.GENERATE_ERROR:return{...e,isLoading:!1,error:{name:"WorkoutError",message:r.payload,code:"WORKOUT_GENERATE_ERROR",timestamp:Date.now()}};default:return e}}function d({children:e}){const[r,s]=(0,i.useReducer)(l,o);return(0,n.jsx)(c.Provider,{value:{state:r,dispatch:s},children:e})}var u=s(379);const h={fitnessLevel:"beginner",availableEquipment:[],preferredDuration:30,targetMuscleGroups:[],healthConditions:[],workoutFrequency:3},m={includeWarmup:!0,includeCooldown:!0,preferredExerciseTypes:["strength","cardio"],maxExercisesPerWorkout:8,restBetweenExercises:60},x=({preferences:e,settings:r,onPreferencesChange:s,onSettingsChange:t,onGenerate:a,className:o})=>{const[c,l]=(0,i.useState)(e||h),[d,u]=(0,i.useState)(r||m),x=(e,r)=>{const t={...c,[e]:r};l(t),s(t)},p=(e,r)=>{const s={...d,[e]:r};u(s),t(s)};return(0,n.jsxs)("div",{className:`preferences-widget ${o||""}`,children:[(0,n.jsx)("h2",{children:"Workout Preferences"}),(0,n.jsxs)("form",{onSubmit:e=>{e.preventDefault(),a(c,d)},children:[(0,n.jsxs)("div",{className:"preferences-section",children:[(0,n.jsx)("h3",{children:"Basic Preferences"}),(0,n.jsxs)("div",{className:"form-group",children:[(0,n.jsx)("label",{htmlFor:"fitnessLevel",children:"Fitness Level"}),(0,n.jsxs)("select",{id:"fitnessLevel",value:c.fitnessLevel,onChange:e=>x("fitnessLevel",e.target.value),children:[(0,n.jsx)("option",{value:"beginner",children:"Beginner"}),(0,n.jsx)("option",{value:"intermediate",children:"Intermediate"}),(0,n.jsx)("option",{value:"advanced",children:"Advanced"})]})]}),(0,n.jsxs)("div",{className:"form-group",children:[(0,n.jsx)("label",{htmlFor:"preferredDuration",children:"Workout Duration (minutes)"}),(0,n.jsx)("input",{type:"number",id:"preferredDuration",value:c.preferredDuration,onChange:e=>x("preferredDuration",parseInt(e.target.value)),min:15,max:120})]}),(0,n.jsxs)("div",{className:"form-group",children:[(0,n.jsx)("label",{htmlFor:"workoutFrequency",children:"Workouts per Week"}),(0,n.jsx)("input",{type:"number",id:"workoutFrequency",value:c.workoutFrequency,onChange:e=>x("workoutFrequency",parseInt(e.target.value)),min:1,max:7})]})]}),(0,n.jsxs)("div",{className:"preferences-section",children:[(0,n.jsx)("h3",{children:"Workout Settings"}),(0,n.jsx)("div",{className:"form-group",children:(0,n.jsxs)("label",{children:[(0,n.jsx)("input",{type:"checkbox",checked:d.includeWarmup,onChange:e=>p("includeWarmup",e.target.checked)}),"Include Warm-up"]})}),(0,n.jsx)("div",{className:"form-group",children:(0,n.jsxs)("label",{children:[(0,n.jsx)("input",{type:"checkbox",checked:d.includeCooldown,onChange:e=>p("includeCooldown",e.target.checked)}),"Include Cool-down"]})}),(0,n.jsxs)("div",{className:"form-group",children:[(0,n.jsx)("label",{htmlFor:"maxExercises",children:"Maximum Exercises"}),(0,n.jsx)("input",{type:"number",id:"maxExercises",value:d.maxExercisesPerWorkout,onChange:e=>p("maxExercisesPerWorkout",parseInt(e.target.value)),min:4,max:15})]}),(0,n.jsxs)("div",{className:"form-group",children:[(0,n.jsx)("label",{htmlFor:"restPeriod",children:"Rest Between Exercises (seconds)"}),(0,n.jsx)("input",{type:"number",id:"restPeriod",value:d.restBetweenExercises,onChange:e=>p("restBetweenExercises",parseInt(e.target.value)),min:30,max:180,step:15})]})]}),(0,n.jsx)("button",{type:"submit",className:"generate-button",children:"Generate Workout"})]})]})};var p=s(403);const g=({exercise:e})=>(0,n.jsxs)("div",{className:"exercise-card",children:[(0,n.jsxs)("div",{className:"exercise-header",children:[(0,n.jsx)("h4",{children:e.name}),(0,n.jsx)("span",{className:`exercise-type type-${e.type}`,children:e.type})]}),(0,n.jsx)("p",{className:"exercise-instructions",children:e.instructions}),(0,n.jsxs)("div",{className:"exercise-details",children:[e.sets&&(0,n.jsxs)("span",{className:"detail",children:[(0,n.jsx)("strong",{children:"Sets:"})," ",e.sets]}),e.reps&&(0,n.jsxs)("span",{className:"detail",children:[(0,n.jsx)("strong",{children:"Reps:"})," ",e.reps]}),e.duration&&(0,n.jsxs)("span",{className:"detail",children:[(0,n.jsx)("strong",{children:"Duration:"})," ",e.duration,"s"]}),e.restPeriod&&(0,n.jsxs)("span",{className:"detail",children:[(0,n.jsx)("strong",{children:"Rest:"})," ",e.restPeriod,"s"]})]}),(0,n.jsxs)("div",{className:"exercise-meta",children:[(0,n.jsxs)("div",{className:"equipment",children:[(0,n.jsx)("strong",{children:"Equipment:"}),(0,n.jsx)("ul",{children:e.equipment.map((e=>(0,n.jsx)("li",{children:e},e)))})]}),(0,n.jsxs)("div",{className:"muscles",children:[(0,n.jsx)("strong",{children:"Target Muscles:"}),(0,n.jsx)("ul",{children:e.targetMuscles.map((e=>(0,n.jsx)("li",{children:e},e)))})]})]})]}),E=({workout:e,onSave:r,className:s})=>(0,n.jsxs)("div",{className:`workout-plan-widget ${s||""}`,children:[(0,n.jsxs)("div",{className:"workout-header",children:[(0,n.jsxs)("div",{className:"workout-title",children:[(0,n.jsx)("h2",{children:e.name}),(0,n.jsx)("span",{className:`difficulty-badge difficulty-${e.difficulty}`,children:e.difficulty})]}),(0,n.jsx)(p.$,{variant:"primary",onClick:()=>r(e),children:"Save Workout"})]}),(0,n.jsxs)("div",{className:"workout-meta",children:[(0,n.jsxs)("span",{className:"meta-item",children:[(0,n.jsx)("strong",{children:"Duration:"})," ",e.duration," minutes"]}),(0,n.jsxs)("span",{className:"meta-item",children:[(0,n.jsx)("strong",{children:"Equipment Needed:"})," ",e.equipment.join(", ")]}),(0,n.jsxs)("span",{className:"meta-item",children:[(0,n.jsx)("strong",{children:"Target Goals:"})," ",e.targetGoals.join(", ")]})]}),(0,n.jsx)("div",{className:"workout-description",children:(0,n.jsx)("p",{children:e.description})}),(0,n.jsxs)("div",{className:"exercises-list",children:[(0,n.jsx)("h3",{children:"Exercises"}),e.exercises.map((e=>(0,n.jsx)(g,{exercise:e},e.id)))]})]});var j=s(55);const f=({workouts:e,className:r})=>(0,n.jsxs)("div",{className:`workout-history-widget ${r||""}`,children:[(0,n.jsx)("h2",{children:"Workout History"}),(0,n.jsx)("div",{className:"history-list",children:0===e.length?(0,n.jsx)("p",{className:"no-workouts",children:"No workout history available"}):e.map((e=>(0,n.jsxs)("div",{className:"history-item",children:[(0,n.jsxs)("div",{className:"history-header",children:[(0,n.jsx)("h3",{children:e.name}),(0,n.jsx)("span",{className:`difficulty-badge difficulty-${e.difficulty}`,children:e.difficulty})]}),(0,n.jsxs)("div",{className:"history-meta",children:[(0,n.jsxs)("span",{className:"meta-item",children:[(0,n.jsx)("strong",{children:"Duration:"})," ",e.duration," minutes"]}),(0,n.jsxs)("span",{className:"meta-item",children:[(0,n.jsx)("strong",{children:"Exercises:"})," ",e.exercises.length]}),(0,n.jsxs)("span",{className:"meta-item",children:[(0,n.jsx)("strong",{children:"Created:"})," ",(0,j.A)(new Date(e.createdAt),{addSuffix:!0})]})]}),(0,n.jsxs)("div",{className:"history-goals",children:[(0,n.jsx)("strong",{children:"Target Goals:"}),(0,n.jsx)("div",{className:"goals-list",children:e.targetGoals.map(((e,r)=>(0,n.jsx)("span",{className:"goal-tag",children:e},r)))})]})]},e.id)))})]}),v={fitnessLevel:"beginner",availableEquipment:[],preferredDuration:30,targetMuscleGroups:[],healthConditions:[],workoutFrequency:3},y={includeWarmup:!0,includeCooldown:!0,preferredExerciseTypes:["strength","cardio"],maxExercisesPerWorkout:8,restBetweenExercises:60};var k=s(250);const R=k.Ay.div`
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+`,N=k.Ay.div`
+    text-align: center;
+    margin-bottom: 2rem;
+
+    h1 {
+        font-size: 2.5rem;
+        color: #2c3e50;
+        margin-bottom: 0.5rem;
+    }
+
+    p {
+        color: #7f8c8d;
+        font-size: 1.1rem;
+    }
+`,b=k.Ay.div`
+    background-color: #fee2e2;
+    border: 1px solid #ef4444;
+    color: #b91c1c;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+`,C=k.Ay.div`
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+`,w=k.Ay.div`
+    grid-column: 1;
+`,T=k.Ay.div`
+    grid-column: 2;
+    min-height: 400px;
+`,S=k.Ay.div`
+    grid-column: 1 / -1;
+    margin-top: 2rem;
+`,_=k.Ay.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    background-color: #f8fafc;
+    border-radius: 0.5rem;
+    color: #64748b;
+    font-size: 1.1rem;
+`,W=k.Ay.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    background-color: #f8fafc;
+    border-radius: 0.5rem;
+    color: #64748b;
+    font-size: 1.1rem;
+    text-align: center;
+    padding: 2rem;
+`,U=(k.Ay.div`
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+    padding: 1.5rem;
+`,()=>{const{state:e,dispatch:r}=function(){const e=(0,i.useContext)(c);if(void 0===e)throw new Error("useWorkout must be used within a WorkoutProvider");return e}(),{isLoading:s,error:a,currentWorkout:o,workoutHistory:l}=e,[d,u]=(0,i.useState)(v),[h,m]=(0,i.useState)(y),p=(0,i.useCallback)((e=>{u(e)}),[]),g=(0,i.useCallback)((e=>{m(e)}),[]),j=(0,i.useCallback)((async(e,s)=>{try{r({type:t.GENERATE_REQUEST})}catch(e){e instanceof Error&&(console.error("Error generating workout:",e),r({type:t.GENERATE_ERROR,payload:e.message}))}}),[r]),k=(0,i.useCallback)((async e=>{try{r({type:t.GENERATE_SUCCESS,payload:e})}catch(e){e instanceof Error&&(console.error("Error saving workout:",e),r({type:t.GENERATE_ERROR,payload:e.message}))}}),[r]);return(0,n.jsxs)(R,{children:[(0,n.jsxs)(N,{children:[(0,n.jsx)("h1",{children:"AI Workout Generator"}),(0,n.jsx)("p",{children:"Generate personalized workouts based on your preferences and goals"})]}),a&&(0,n.jsx)(b,{children:a.message}),(0,n.jsxs)(C,{children:[(0,n.jsx)(w,{children:(0,n.jsx)(x,{preferences:d,settings:h,onPreferencesChange:p,onSettingsChange:g,onGenerate:j,className:"preferences-widget"})}),(0,n.jsx)(T,{children:s?(0,n.jsx)(_,{children:"Generating your personalized workout..."}):o?(0,n.jsx)(E,{workout:o,onSave:k,className:"workout-widget"}):(0,n.jsx)(W,{children:'Configure your preferences and click "Generate Workout" to create a personalized workout plan.'})}),(0,n.jsx)(S,{children:(0,n.jsx)(f,{workouts:l,className:"history-widget"})})]})]})});class A{constructor(){this.identifier="workout-generator",this.metadata={name:"AI Workout Generator",description:"Generate personalized workouts based on your preferences",order:2},this.context=null}async register(e){return this.context=e,e.debug&&console.log("[WorkoutGeneratorFeature] Registered"),Promise.resolve()}async init(){if(this.context)return this.context.debug&&console.log("[WorkoutGeneratorFeature] Initialized"),this.context.dispatch("athlete-dashboard")({type:t.FETCH_REQUEST,payload:{userId:0}}),Promise.resolve()}isEnabled(){return!0}render({userId:e}){return this.context?(0,n.jsx)(a.t,{children:(0,n.jsx)(u.vu,{children:(0,n.jsx)(d,{children:(0,n.jsx)(U,{})})})}):(console.error("[WorkoutGeneratorFeature] Context not initialized"),null)}async cleanup(){return this.context?.debug&&console.log("[WorkoutGeneratorFeature] Cleanup"),this.context=null,Promise.resolve()}onNavigate(){this.context&&this.init()}onUserChange(){this.context&&this.init()}}}}]);
